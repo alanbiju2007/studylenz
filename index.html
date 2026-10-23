@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyLens — Your Personal AI Tutor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">
+        <span class="logo-icon"></span>
+        <strong>StudyLens</strong>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <a href="#dashboard" class="btn btn-primary">Open App</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero container">
+    <span class="badge">✨ Your AI Study Companion</span>
+    <h1>Your Personal AI Tutor. <span class="highlight">Anytime. Anywhere.</span></h1>
+    <p>Study plans, instant doubt solving, and intelligent exam readiness tracking.</p>
+    <a href="#dashboard" class="btn btn-primary btn-large">Start Learning Free</a>
+  </section>
+
+  <!-- Student Dashboard -->
+  <section id="dashboard" class="dashboard container">
+    <h2>Student Dashboard</h2>
+    <div class="dashboard-grid">
+      
+      <!-- Daily Study Plan -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Today's Study Plan</h3>
+          <span id="progress-text">0% Completed</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-bar" class="progress-bar-fill"></div>
+        </div>
+        <ul id="task-list" class="task-list">
+          <li class="task-item">
+            <input type="checkbox" id="t1" onchange="updateProgress()" />
+            <label for="t1">Algebra: Practice Quadratic Equations (30m)</label>
+          </li>
+          <li class="task-item">
+            <input type="checkbox" id="t2" onchange="updateProgress()" />
+            <label for="t2">Chemistry: Organic Reactions Flashcards (15m)</label>
+          </li>
+          <li class="task-item">
+            <input type="checkbox" id="t3" onchange="updateProgress()" />
+            <label for="t3">Physics: Revise Newton's Laws & 10 MCQs (40m)</label>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pomodoro Timer -->
+      <div class="card">
+        <h3>Focus Mode</h3>
+        <p class="timer-desc">25-minute Pomodoro session</p>
+        <div id="timer-display" class="timer-display">25:00</div>
+        <div class="timer-controls">
+          <button id="timer-btn" class="btn btn-primary" onclick="toggleTimer()">Start</button>
+          <button class="btn btn-secondary" onclick="resetTimer()">Reset</button>
+        </div>
+      </div>
+
+      <!-- Lens AI Tutor Preview -->
+      <div class="card full-width">
+        <h3>Lens AI Assistant</h3>
+        <div id="chat-box" class="chat-box">
+          <div class="chat-msg bot">Hi! What topic or problem can I help you break down today?</div>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="chat-input" placeholder="Ask a doubt or paste a math question..." />
+          <button class="btn btn-primary" onclick="sendDoubt()">Send</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
